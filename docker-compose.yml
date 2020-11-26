@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+  application1:
+    image: kholeone/application1:latest
+    build: ./application1
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+    deploy:
+      replicas: 3
+  application2:
+    image: kholeone/application2:latest
+    build: ./application2
+    ports:
+    - target: 5001
+      published: 5001
+      protocol: tcp
+    deploy:
+      replicas: 3
+
